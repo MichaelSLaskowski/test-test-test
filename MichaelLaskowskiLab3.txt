@@ -1,0 +1,56 @@
+package wtf;
+
+public class ClassPractice {
+	
+	
+//1. Write a method to remove a given character from a string. 
+	public static void main(String[] args) {
+			//quijibo - A fat, balding, North American ape with no chin.
+		String phrase = "quijibo - A fat, balding, North American ape with no chin.";
+		System.out.println(phrase);
+		
+		phrase = removeChar(phrase, 'a');
+		System.out.println(phrase);
+			}
+
+public static String removeChar(String phrase, char a) {
+	if (phrase == null ) {
+	return null;
+}
+return phrase.replaceAll(Character.toString(a), "");
+}
+}
+//2. Write a method to remove duplicate characters from a string.
+	public static void main(String[] args) {
+	  			  String stringWithDuplicates = "quijibo - A fat, balding, North American ape with no chin.";
+			  char[] characters = stringWithDuplicates.toCharArray();
+			  boolean[] found = new boolean[200];
+			  StringBuilder sb = new StringBuilder();
+			  System.out.println("String with duplicates : " + stringWithDuplicates);
+			  for (char c : characters) {
+			     if (!found[c]) {
+			        found[c] = true;
+			        sb.append(c);
+			     }
+			  }
+			  System.out.println("String after duplicates removed : " + sb.toString());
+			    }
+			}
+//3. Write a method to count the number of vowels and consonants in a string. 
+	public static void main(String[] args) {
+		String phrase ="quijibo - A fat, balding, North American ape with no chin.";    
+        System.out.println("The String is: " + phrase);
+	
+        int vowelN = 0, consonentN = 0;
+        phrase = phrase.toLowerCase();
+        for(int i = 0; i < phrase.length(); i++)
+        {
+	if(phrase.charAt(i)=='a'  || phrase.charAt(i)=='e' || phrase.charAt(i)=='i' || 
+			phrase.charAt(i)=='o' || phrase.charAt(i)=='u') vowelN++;
+	else if(phrase.charAt(i) >= 'a' && phrase.charAt(i) <='z') consonentN++;
+        }
+        System.out.println("The total number of vowels is: "+vowelN);
+        System.out.println("The total number of consonants is: "+consonentN);
+	}
+}   
+//
